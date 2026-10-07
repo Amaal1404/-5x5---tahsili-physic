@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10283f"><title>5×5 تحصيلي فيزياء</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site">
+<header class="topbar">
+  <div class="brand"><div class="logo"><span>5</span><b>×</b><span>5</span></div><div><strong>5×5 تحصيلي فيزياء</strong><small>تدريب يومي • ٥ أسئلة • ٥ دقائق</small></div></div>
+  <div class="top-actions"><div class="teacher">إعداد وتنفيذ<br><b>آمال الفارسي</b></div><button id="teacherBtn" class="mini-btn" type="button">لوحة المعلم</button></div>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-copy">
+  <div class="eyebrow">مبادرة تعليمية تفاعلية</div><h1>كل يوم <em>5 أسئلة</em>…<br>خطوة أقرب للتحصيلي.</h1>
+  <p>رحلة 5×5 متسلسلة: تحدٍ واحد في كل مرة، 5 أسئلة في موضوع محدد، ثم نراجعها معًا في أول 5 دقائق من الحصة.</p>
+  <div class="name-box"><label for="studentName">اسم الطالبة</label><input id="studentName" placeholder="اكتبي اسمك هنا" autocomplete="name"></div>
+  <div class="hero-actions"><button id="startBtn" class="btn primary" type="button">ابدئي رحلة 5×5</button><button id="aboutBtn" class="btn ghost" type="button">كيف تعمل المبادرة؟</button></div>
+ </div>
+ <div class="orbit"><div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="center5">5<br><span>×</span><br>5</div><span class="atom a1">e⁻</span><span class="atom a2">ω</span><span class="atom a3">λ</span></div>
+</section>
+
+<section id="journey" class="section">
+ <div class="section-head"><div><span class="kicker">رحلتي في 5×5</span><h2>التحديات المتسلسلة</h2></div><span id="journeyCount" class="count"></span></div>
+ <div class="journey-summary"><div><b id="completedCount">٠</b><span>تحديات مكتملة</span></div><div><b id="questionCount">٠</b><span>أسئلة محلولة</span></div><div class="wide"><span>التقدم</span><div class="journey-bar"><i id="journeyBar"></i></div></div></div>
+ <div id="challengeGrid" class="challenge-grid"></div>
+</section>
+
+<section id="about" class="about section hidden">
+ <div class="section-head"><div><span class="kicker">فكرة المبادرة</span><h2>٥ × ٥</h2></div></div>
+ <div class="steps"><div><b>01</b><h3>حلّي</h3><p>٥ أسئلة في موضوع واحد، في المنزل أو قبل الحصة.</p></div><div><b>02</b><h3>راجعي</h3><p>شاهدي نتيجتك ومواطن التعثر بعد التحدي.</p></div><div><b>03</b><h3>ناقشي</h3><p>نحل الأسئلة معًا في أول ٥ دقائق من الحصة.</p></div></div>
+ <div class="about-note">كل تحدٍ مستقل ويحمل أرقام أسئلته، وبطاقة إنجاز خاصة بالطالبة يمكن إرفاقها في ملف الإنجاز الإلكتروني.</div>
+</section>
+
+<section id="quiz" class="quiz section hidden">
+ <div class="quiz-head"><button id="backBtn" class="text-btn" type="button">العودة للتحديات</button><div><span id="quizChallenge"></span><strong id="quizTitle"></strong></div><div class="progress"><span id="progressText">١ / ٥</span><div><i id="progressBar"></i></div></div></div>
+ <div class="question-meta"><span id="topic"></span><span id="skill"></span></div><div class="question-card"><img id="questionImage" alt="السؤال"></div><div id="hintBox" class="hint-box"><span>💡 توضيح سريع</span><p id="questionExplanation"></p></div><div id="choices" class="choices"></div>
+ <button id="nextBtn" class="btn primary full" type="button" disabled>التالي</button>
+</section>
+
+<section id="result" class="result section hidden">
+ <div class="result-top"><span class="kicker">أتممتِ التحدي</span><h2>بطاقة إنجاز 5×5</h2></div>
+ <div class="thanks-card" id="certificateCard">
+  <div class="mini-logo">5×5</div><div class="certificate-label">بطاقة إنجاز</div><h2><span id="studentNameResult">طالبة 5×5</span></h2>
+  <p id="thanksMain" class="thanks-main"></p>
+  <div class="score"><div><strong id="scoreNum">0</strong><small>/ 5</small></div><span id="scoreLabel"></span></div>
+  <div class="certificate-details"><div><span>التحدي</span><b id="challengeNo"></b></div><div><span>الموضوع</span><b id="challengeName"></b></div><div><span>أرقام الأسئلة</span><b id="questionIds"></b></div><div><span>التاريخ</span><b id="completionDate"></b></div><div><span>رمز الإنجاز</span><b id="completionCode"></b></div></div>
+  <div class="quote">«٥ أسئلة اليوم… خطوة جديدة نحو الإتقان.»</div><div class="teacher-sign">تنفيذ وإشراف <b>المعلمة آمال الفارسي</b></div>
+ </div>
+ <p id="resultMsg"></p>
+ <div class="review-head"><h3>مراجعة التحدي</h3><span>راجعي الأخطاء في أول ٥ دقائق من الحصة</span></div><div id="review" class="review"></div>
+ <div class="result-actions"><button id="printBtn" class="btn secondary" type="button">طباعة / حفظ البطاقة PDF</button><button id="nextChallengeBtn" class="btn primary" type="button">الانتقال للتحدي التالي</button></div>
+</section>
+
+<section id="teacherPanel" class="teacher-panel section hidden">
+ <div class="panel-head"><div><span class="kicker">لوحة المعلم</span><h2>متابعة رحلة 5×5</h2><p>إحصاءات هذا الجهاز المحلي.</p></div><button id="closeTeacher" class="text-btn" type="button">العودة للموقع</button></div>
+ <div class="teacher-stats"><div><b id="tStudents">٠</b><span>أسماء مستخدمة</span></div><div><b id="tAttempts">٠</b><span>محاولات مكتملة</span></div><div><b id="tQuestions">٠</b><span>أسئلة محلولة</span></div><div><b id="tAverage">٠٪</b><span>متوسط الإتقان</span></div></div>
+ <div class="panel-grid"><div class="panel-card"><h3>التحديات</h3><div id="teacherChallenges"></div></div><div class="panel-card"><h3>آخر الإنجازات</h3><div id="teacherLog"></div></div></div>
+ <div class="panel-actions"><button id="exportBtn" class="btn secondary" type="button">تصدير سجل الإنجاز</button><button id="resetBtn" class="btn danger" type="button">مسح سجل هذا الجهاز</button></div>
+ <div class="teacher-note">ملاحظة: هذه النسخة تعمل دون خادم، لذلك لوحة المعلم تعرض بيانات الجهاز الحالي فقط. عند ربط الموقع بقاعدة بيانات/Google Sheets لاحقًا يمكن أن تصبح اللوحة مشتركة لجميع الطالبات.</div>
+</section>
+</main>
+<footer><span>5×5 تحصيلي فيزياء</span><span>تنفيذ المعلمة آمال الفارسي</span></footer>
+</div>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
